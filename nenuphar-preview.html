@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; background: #f5f0e8; display: flex; gap: 40px; padding: 60px; align-items: flex-start; flex-wrap: wrap; }
+  .option { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .icon-wrap { width: 80px; height: 80px; background: #f5e8e6; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+  svg { width: 36px; height: 36px; stroke: #670d00; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  label { font-size: 13px; color: #555; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- Option 1: 8-petal radial -->
+<div class="option">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(45 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(90 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(135 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(180 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(225 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(270 12 12)"/>
+      <path d="M12 10C11 7 11 4 12 3c1 1 1 4 0 7z" transform="rotate(315 12 12)"/>
+    </svg>
+  </div>
+  <label>1 — 8-petal radial</label>
+</div>
+
+<!-- Option 2: 5-petal ellipse -->
+<div class="option">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="2"/>
+      <ellipse cx="12" cy="6" rx="2" ry="3.5"/>
+      <ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(72 12 12)"/>
+      <ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(144 12 12)"/>
+      <ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(216 12 12)"/>
+      <ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(288 12 12)"/>
+    </svg>
+  </div>
+  <label>2 — 5-petal ellipse</label>
+</div>
+
+<!-- Option 3: 6-petal pointed -->
+<div class="option">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="1.5"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z" transform="rotate(60 12 12)"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z" transform="rotate(120 12 12)"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z" transform="rotate(180 12 12)"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z" transform="rotate(240 12 12)"/>
+      <path d="M12 10.5C10.5 8 10 5 12 3c2 2 1.5 5 0 7.5z" transform="rotate(300 12 12)"/>
+    </svg>
+  </div>
+  <label>3 — 6-petal pointed</label>
+</div>
+
+<!-- Option 4: Lotus on water -->
+<div class="option">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 13C9 11 7 8 8 5c1.5 1 3 3.5 4 8z"/>
+      <path d="M12 13C15 11 17 8 16 5c-1.5 1-3 3.5-4 8z"/>
+      <path d="M12 13C10 16 7 17 5 15c1-1.5 4-2.5 7-2z"/>
+      <path d="M12 13C14 16 17 17 19 15c-1-1.5-4-2.5-7-2z"/>
+      <path d="M12 13v5"/>
+      <path d="M8 20 Q12 18 16 20"/>
+    </svg>
+  </div>
+  <label>4 — Lotus on water</label>
+</div>
+
+<!-- Option 5: 8-petal refined -->
+<div class="option">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(45 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(90 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(135 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(180 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(225 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(270 12 12)"/>
+      <path d="M12 10C11.5 7.5 11.5 5 12 3.5 12.5 5 12.5 7.5 12 10z" transform="rotate(315 12 12)"/>
+    </svg>
+  </div>
+  <label>5 — 8-petal slim</label>
+</div>
+
+</body>
+</html>
