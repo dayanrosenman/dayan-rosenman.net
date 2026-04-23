@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letterhead – David Dayan-Rosenman, MD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:      #670d00;
+      --accent-dark: #3d0800;
+      --ink:         #3a3230;
+      --ink-light:   #8a7a72;
+      --cream:       #f9f5f2;
+      --rule:        #e8ddd9;
+    }
+
+    /* Screen: center the page with a shadow */
+    body {
+      background: #d6cfc9;
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--ink);
+      padding: 32px;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--cream);
+      border-top: 5px solid var(--accent);
+      padding: 36px 1in 28px;
+    }
+
+    .header-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      letter-spacing: 0.01em;
+      margin-bottom: 6px;
+    }
+
+    .header-creds {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+
+    .header-specialty {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-light);
+      margin-top: 8px;
+    }
+
+    /* ── Divider ── */
+    .header-rule {
+      border: none;
+      border-top: 1px solid var(--accent);
+      margin: 18px 1in 0;
+    }
+
+    /* ── Contact bar ── */
+    .contact-bar {
+      background: var(--cream);
+      padding: 10px 1in 18px;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 10.5px;
+      color: var(--ink-light);
+      letter-spacing: 0.04em;
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .contact-bar span { white-space: nowrap; }
+    .contact-bar a { color: var(--accent); text-decoration: none; }
+    .contact-bar .sep {
+      margin: 0 10px;
+      color: var(--rule);
+    }
+
+    /* ── Body ── */
+    .body {
+      flex: 1;
+      padding: 0.6in 1in;
+      border-top: 1px solid var(--rule);
+    }
+
+    .date-line {
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-bottom: 0.45in;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--rule);
+      padding: 14px 1in;
+      text-align: center;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 10px;
+      color: var(--ink-light);
+      letter-spacing: 0.05em;
+      background: var(--cream);
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: none; padding: 0; }
+      .page {
+        width: 100%;
+        min-height: 0;
+        box-shadow: none;
+      }
+      .header, .contact-bar, .footer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      @page {
+        size: letter;
+        margin: 0;
+      }
+      /* Re-apply logical padding inside print margins */
+      .header    { padding: 36px 1in 28px; }
+      .header-rule { margin: 18px 1in 0; }
+      .contact-bar { padding: 10px 1in 18px; }
+      .body      { padding: 0.6in 1in; }
+      .footer    { padding: 14px 1in; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-name">David Dayan-Rosenman, MD</div>
+    <div class="header-creds">Board Certified in Addiction Medicine &amp; Internal Medicine</div>
+    <div class="header-creds">Harvard Medical School Faculty</div>
+    <div class="header-specialty">Mental Health &amp; Addiction Care &nbsp;&middot;&nbsp; Cambridge, MA</div>
+  </header>
+  <hr class="header-rule">
+
+  <!-- Contact bar -->
+  <div class="contact-bar">
+    <span><a href="tel:+16175280538">(617) 528-0538</a></span>
+    <span class="sep">&middot;</span>
+    <span><a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a></span>
+    <span class="sep">&middot;</span>
+    <span>1 Arnold Circle, Cambridge, MA 02139</span>
+    <span class="sep">&middot;</span>
+    <span><a href="https://dayan-rosenman.net">dayan-rosenman.net</a></span>
+  </div>
+
+  <!-- Body -->
+  <main class="body">
+    <div class="date-line">&nbsp;</div>
+    <!-- Letter content goes here -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    David Dayan-Rosenman, MD &nbsp;&middot;&nbsp; 1 Arnold Circle, Cambridge, MA 02139 &nbsp;&middot;&nbsp; (617) 528-0538 &nbsp;&middot;&nbsp; dayan-rosenman.net
+  </footer>
+
+</div>
+
+</body>
+</html>
