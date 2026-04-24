@@ -395,16 +395,17 @@
     border-top: 1px solid var(--rule);
   }
   .conditions-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;
     margin-top: 20px;
-    max-width: 560px;
-  }
-  .condition-item {
     font-size: 15px;
-    font-weight: 400;
     color: var(--ink-light);
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+  }
+  .conditions-list li::before {
+    content: '·';
+    color: var(--accent);
+    margin-right: 8px;
   }
 
   /* EXPECT */
@@ -1010,7 +1011,14 @@
 
   <div class="conditions-wrap">
     <div class="section-label">Conditions Treated</div>
-    <p class="conditions-list">ADHD · Anxiety · Depression · Insomnia · PTSD · Substance Use Disorders</p>
+    <ul class="conditions-list">
+      <li>ADHD</li>
+      <li>Alcohol &amp; Substance Use Disorders</li>
+      <li>Anxiety</li>
+      <li>Depression</li>
+      <li>Insomnia</li>
+      <li>PTSD</li>
+    </ul>
   </div>
 </section>
 
@@ -1217,7 +1225,7 @@
 <!-- FOOTER -->
 <footer>
   <span>© 2026 David Dayan-Rosenman, MD · <a href="tel:6175280538">(617) 528-0538</a> · <a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a></span>
-  <span>dayan-rosenman.net</span>
+  <span>www.dayan-rosenman.net</span>
 </footer>
 
 <script>
