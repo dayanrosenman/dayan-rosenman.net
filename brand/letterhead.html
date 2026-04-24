@@ -41,61 +41,41 @@
     .header {
       background: var(--cream);
       border-top: 5px solid var(--accent);
-      padding: 36px 1in 28px;
+      padding: 20px 1in 14px;
     }
 
     .header-name {
       font-family: 'Lora', Georgia, serif;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 600;
       color: var(--accent-dark);
       letter-spacing: 0.01em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .header-creds {
       font-family: 'Lora', Georgia, serif;
-      font-size: 13px;
+      font-size: 12.5px;
       font-style: italic;
       color: var(--accent);
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .header-specialty {
       font-family: 'DM Sans', Arial, sans-serif;
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--ink-light);
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     /* ── Divider ── */
     .header-rule {
       border: none;
       border-top: 1px solid var(--accent);
-      margin: 18px 1in 0;
-    }
-
-    /* ── Contact bar ── */
-    .contact-bar {
-      background: var(--cream);
-      padding: 10px 1in 18px;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-size: 10.5px;
-      color: var(--ink-light);
-      letter-spacing: 0.04em;
-      display: flex;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-
-    .contact-bar span { white-space: nowrap; }
-    .contact-bar a { color: var(--accent); text-decoration: none; }
-    .contact-bar .sep {
-      margin: 0 10px;
-      color: var(--rule);
+      margin: 12px 1in 0;
     }
 
     /* ── Body ── */
@@ -113,15 +93,20 @@
 
     /* ── Footer ── */
     .footer {
-      border-top: 1px solid var(--rule);
-      padding: 14px 1in;
-      text-align: center;
+      border-top: 1px solid var(--accent);
+      padding: 12px 1in;
       font-family: 'DM Sans', Arial, sans-serif;
       font-size: 10px;
       color: var(--ink-light);
-      letter-spacing: 0.05em;
       background: var(--cream);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      align-items: center;
     }
+    .footer span { white-space: nowrap; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer .sep { margin: 0 10px; color: var(--rule); }
 
     /* ── Print ── */
     @media print {
@@ -131,7 +116,7 @@
         min-height: 0;
         box-shadow: none;
       }
-      .header, .contact-bar, .footer {
+      .header, .footer {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -140,11 +125,10 @@
         margin: 0;
       }
       /* Re-apply logical padding inside print margins */
-      .header    { padding: 36px 1in 28px; }
-      .header-rule { margin: 18px 1in 0; }
-      .contact-bar { padding: 10px 1in 18px; }
-      .body      { padding: 0.6in 1in; }
-      .footer    { padding: 14px 1in; }
+      .header    { padding: 20px 1in 14px; }
+      .header-rule { margin: 12px 1in 0; }
+      .body      { padding: 0.5in 1in; }
+      .footer    { padding: 12px 1in; }
     }
   </style>
 <script>if(sessionStorage.getItem('dr_auth')!=='1'){location.replace('/brand/')}</script>
@@ -162,17 +146,6 @@
   </header>
   <hr class="header-rule">
 
-  <!-- Contact bar -->
-  <div class="contact-bar">
-    <span><a href="tel:+16175280538">(617) 528-0538</a></span>
-    <span class="sep">&middot;</span>
-    <span><a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a></span>
-    <span class="sep">&middot;</span>
-    <span>1 Arnold Circle, Cambridge, MA 02139</span>
-    <span class="sep">&middot;</span>
-    <span><a href="https://dayan-rosenman.net">dayan-rosenman.net</a></span>
-  </div>
-
   <!-- Body -->
   <main class="body">
     <div class="date-line">&nbsp;</div>
@@ -181,7 +154,15 @@
 
   <!-- Footer -->
   <footer class="footer">
-    David Dayan-Rosenman, MD &nbsp;&middot;&nbsp; 1 Arnold Circle, Cambridge, MA 02139 &nbsp;&middot;&nbsp; (617) 528-0538 &nbsp;&middot;&nbsp; dayan-rosenman.net
+    <span><a href="tel:+16175280538">(617) 528-0538</a></span>
+    <span class="sep">&middot;</span>
+    <span style="color:#8a7a72;font-size:9px;text-transform:uppercase;letter-spacing:0.06em;">Phone/Text</span>
+    <span class="sep">&middot;</span>
+    <span><a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a></span>
+    <span class="sep">&middot;</span>
+    <span>1 Arnold Circle, Cambridge, MA 02139</span>
+    <span class="sep">&middot;</span>
+    <span><a href="https://www.dayan-rosenman.net">www.dayan-rosenman.net</a></span>
   </footer>
 
 </div>
