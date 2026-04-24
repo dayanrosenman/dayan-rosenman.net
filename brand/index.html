@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Assets – David Dayan-Rosenman, MD</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f5f0ec;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3a3230;
+    }
+    .container {
+      text-align: center;
+      width: 320px;
+    }
+    .name {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3d0800;
+      margin-bottom: 4px;
+    }
+    .sub {
+      font-size: 11px;
+      color: #8a7a72;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 32px;
+    }
+    /* Gate */
+    #gate input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    #gate button {
+      width: 100%;
+      padding: 10px;
+      background: #670d00;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    #gate button:hover { background: #3d0800; }
+    #gate-err { color: #b00; font-size: 11px; margin-top: 8px; min-height: 14px; }
+    /* Nav */
+    #nav { display: none; }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: #fff;
+      border: 1px solid #e8ddd9;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #3a3230;
+      font-size: 14px;
+      transition: border-color 0.15s;
+    }
+    .nav-link:hover { border-color: #670d00; color: #670d00; }
+    .nav-link span { font-size: 11px; color: #8a7a72; text-transform: uppercase; letter-spacing: 0.07em; }
+    .nav-arrow { color: #ccc; font-size: 16px; }
+    .nav-link:hover .nav-arrow { color: #670d00; }
+    .sign-out {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 11px;
+      color: #8a7a72;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    (function() {
+      if (sessionStorage.getItem('dr_auth') === '1') {
+        document.addEventListener('DOMContentLoaded', showNav);
+      }
+    })();
+
+    function check() {
+      if (document.getElementById('g-pwd').value === 'namnesor') {
+        sessionStorage.setItem('dr_auth', '1');
+        showNav();
+      } else {
+        document.getElementById('gate-err').textContent = 'Incorrect password.';
+        document.getElementById('g-pwd').value = '';
+        document.getElementById('g-pwd').focus();
+      }
+    }
+
+    function showNav() {
+      var gate = document.getElementById('gate');
+      var nav  = document.getElementById('nav');
+      if (gate) gate.style.display = 'none';
+      if (nav)  nav.style.display  = 'block';
+    }
+
+    function signOut() {
+      sessionStorage.removeItem('dr_auth');
+      location.reload();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('g-btn');
+      var pwd = document.getElementById('g-pwd');
+      if (btn) btn.addEventListener('click', check);
+      if (pwd) pwd.addEventListener('keydown', function(e) { if (e.key === 'Enter') check(); });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="name">David Dayan-Rosenman, MD</div>
+    <div class="sub">Brand Assets</div>
+
+    <div id="gate">
+      <input id="g-pwd" type="password" placeholder="Password">
+      <button id="g-btn">Enter</button>
+      <div id="gate-err"></div>
+    </div>
+
+    <div id="nav">
+      <a class="nav-link" href="email-signature.html">
+        <div><div>Email Signature</div><span>Gmail · copy &amp; paste</span></div>
+        <div class="nav-arrow">›</div>
+      </a>
+      <a class="nav-link" href="business-card.html">
+        <div><div>Business Card</div><span>Moo · PDF export</span></div>
+        <div class="nav-arrow">›</div>
+      </a>
+      <a class="nav-link" href="letterhead.html">
+        <div><div>Letterhead</div><span>Print · PDF export</span></div>
+        <div class="nav-arrow">›</div>
+      </a>
+      <div class="sign-out" onclick="signOut()">Sign out</div>
+    </div>
+  </div>
+</body>
+</html>
