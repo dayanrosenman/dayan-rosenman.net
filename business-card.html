@@ -30,6 +30,34 @@
     .instructions td:first-child { font-weight: bold; color: #670d00; white-space: nowrap; }
     .instructions p { margin-top: 10px; }
 
+    /* ── Print button ── */
+    .print-btn {
+      display: inline-block;
+      margin-bottom: 40px;
+      padding: 10px 22px;
+      background: #670d00;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .print-btn:hover { background: #3d0800; }
+
+    /* ── Print / PDF export ── */
+    @media print {
+      @page { size: 3.5in 2in; margin: 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+      .instructions, .section-label, .print-btn { display: none !important; }
+      .card-pair { display: block !important; gap: 0 !important; }
+      .card-wrap { page-break-after: always; break-after: page; display: block !important; }
+      .card-wrap .card-label { display: none !important; }
+      .card { width: 3.5in !important; height: 2in !important; box-shadow: none !important; }
+    }
+
     /* ── Section labels ── */
     .section-label {
       font-size: 11px;
@@ -236,8 +264,10 @@
         <td>84 × 55mm trim &nbsp;·&nbsp; +2mm bleed each side &nbsp;·&nbsp; 300 DPI &nbsp;·&nbsp; PDF or JPG/PNG</td>
       </tr>
     </table>
-    <p><strong>To export a card:</strong> Open in Chrome → right-click the card → Inspect → in the Elements panel right-click the <code>.card</code> div → <em>Capture node screenshot</em>. This saves a PNG at screen resolution — for full 300 DPI output, scale the card 2× in CSS before capturing, or use a PDF print workflow.</p>
+    <p><strong>To export for printing:</strong> Click the button below → Chrome print dialog opens → set <em>Destination</em> to "Save as PDF", <em>Paper size</em> to Custom 3.5"×2", <em>Margins</em> None, enable <em>Background graphics</em> → Save. Each card (front/back, both versions) lands on its own page. Upload front and back pages separately to Moo or VistaPrint.</p>
   </div>
+
+  <button class="print-btn" onclick="window.print()">Export PDF for printing</button>
 
   <!-- ════════════════════════════════════════
        VERSION A — No Photo
