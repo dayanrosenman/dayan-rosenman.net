@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /brand/
 
 Sitemap: https://dayan-rosenman.net/sitemap.xml
