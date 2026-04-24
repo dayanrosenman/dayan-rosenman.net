@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Cards – David Dayan-Rosenman, MD</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #ddd7d3;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 48px;
+      color: #3a3230;
+    }
+
+    /* ── Instructions ── */
+    .instructions {
+      font-size: 12.5px;
+      color: #555;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 18px 22px;
+      max-width: 680px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .instructions h2 { margin: 0 0 10px; font-size: 13.5px; color: #670d00; }
+    .instructions table { border-collapse: collapse; margin-top: 6px; }
+    .instructions td { padding: 2px 16px 2px 0; font-size: 12px; vertical-align: top; }
+    .instructions td:first-child { font-weight: bold; color: #670d00; white-space: nowrap; }
+    .instructions p { margin-top: 10px; }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin-bottom: 14px;
+      margin-top: 48px;
+    }
+    .section-label:first-of-type { margin-top: 0; }
+
+    .card-pair { display: flex; gap: 28px; flex-wrap: wrap; }
+    .card-wrap .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    /* ── Card shell ── */
+    /* Display at ~1.8× — VistaPrint 3.5"×2" at 300 DPI = 1050×600px → shown at 525×300px */
+    .card {
+      width: 525px;
+      height: 300px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+      position: relative;
+    }
+
+    /* ══════════════════════════════════════
+       FRONT — No Photo
+    ══════════════════════════════════════ */
+    .front-nophoto {
+      background: #faf7f4;
+      border-top: 5px solid #670d00;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 26px 34px;
+    }
+    .fn-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3d0800;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .fn-cred {
+      font-size: 9px;
+      color: #8a7a72;
+      line-height: 1.65;
+      margin-bottom: 11px;
+    }
+    .fn-rule {
+      border: none;
+      border-top: 1px solid #ddd5cf;
+      margin-bottom: 11px;
+    }
+    .fn-specialty {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: #8a7a72;
+      margin-bottom: 11px;
+    }
+    .fn-contact { display: flex; flex-direction: column; gap: 3px; }
+    .fn-row { display: flex; align-items: baseline; gap: 10px; font-size: 9.5px; }
+    .fn-lbl {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8a7a72;
+      width: 34px;
+      flex-shrink: 0;
+    }
+    .fn-val { color: #3a3230; }
+    .fn-val a { color: #670d00; text-decoration: none; }
+
+    /* ══════════════════════════════════════
+       FRONT — With Photo
+    ══════════════════════════════════════ */
+    .front-photo {
+      background: #faf7f4;
+      display: flex;
+      border-top: 5px solid #670d00;
+    }
+    .fp-photo {
+      width: 196px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .fp-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      display: block;
+    }
+    .fp-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px 24px 18px 18px;
+      border-left: 3px solid #670d00;
+    }
+    .fp-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16.5px;
+      font-weight: bold;
+      color: #3d0800;
+      line-height: 1.15;
+      margin-bottom: 5px;
+    }
+    .fp-cred {
+      font-size: 8.5px;
+      color: #8a7a72;
+      line-height: 1.65;
+      margin-bottom: 9px;
+    }
+    .fp-rule {
+      border: none;
+      border-top: 1px solid #ddd5cf;
+      margin-bottom: 9px;
+    }
+    .fp-contact { display: flex; flex-direction: column; gap: 3px; }
+    .fp-row { display: flex; align-items: baseline; gap: 8px; font-size: 9px; }
+    .fp-lbl {
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8a7a72;
+      width: 30px;
+      flex-shrink: 0;
+    }
+    .fp-val { color: #3a3230; }
+    .fp-val a { color: #670d00; text-decoration: none; }
+
+    /* ══════════════════════════════════════
+       BACK (shared)
+    ══════════════════════════════════════ */
+    .back-card {
+      background: #670d00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .back-eyebrow {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+    }
+    .back-name {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .back-rule {
+      width: 44px;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.28);
+      margin-bottom: 12px;
+    }
+    .back-specialty {
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 5px;
+    }
+    .back-location {
+      font-size: 8px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    .back-url {
+      font-size: 8.5px;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="instructions">
+    <h2>Print specifications</h2>
+    <table>
+      <tr>
+        <td>VistaPrint</td>
+        <td>3.5″ × 2″ trim &nbsp;·&nbsp; +0.125″ bleed each side &nbsp;·&nbsp; 300 DPI &nbsp;·&nbsp; PDF or JPG/PNG (CMYK)</td>
+      </tr>
+      <tr>
+        <td>Moo (Standard)</td>
+        <td>84 × 55mm trim &nbsp;·&nbsp; +2mm bleed each side &nbsp;·&nbsp; 300 DPI &nbsp;·&nbsp; PDF or JPG/PNG</td>
+      </tr>
+    </table>
+    <p><strong>To export a card:</strong> Open in Chrome → right-click the card → Inspect → in the Elements panel right-click the <code>.card</code> div → <em>Capture node screenshot</em>. This saves a PNG at screen resolution — for full 300 DPI output, scale the card 2× in CSS before capturing, or use a PDF print workflow.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       VERSION A — No Photo
+  ════════════════════════════════════════ -->
+
+  <div class="section-label">Version A — No photo</div>
+  <div class="card-pair">
+
+    <div class="card-wrap">
+      <div class="card-label">Front</div>
+      <div class="card front-nophoto">
+        <div class="fn-name">David Dayan-Rosenman, MD</div>
+        <div class="fn-cred">
+          Board Certified in Addiction Medicine &amp; Internal Medicine<br>
+          Instructor in Psychiatry, Harvard Medical School
+        </div>
+        <hr class="fn-rule">
+        <div class="fn-specialty">Mental Health &amp; Addiction Care &nbsp;·&nbsp; Cambridge, MA</div>
+        <div class="fn-contact">
+          <div class="fn-row">
+            <span class="fn-lbl">Phone</span>
+            <span class="fn-val">(617) 528-0538</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-lbl">Email</span>
+            <span class="fn-val">david@dayan-rosenman.net</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-lbl">Web</span>
+            <span class="fn-val">www.dayan-rosenman.net</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-lbl">Office</span>
+            <span class="fn-val">1 Arnold Circle, Cambridge, MA 02139</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card-label">Back</div>
+      <div class="card back-card">
+        <div class="back-eyebrow">Private Practice</div>
+        <div class="back-name">David Dayan-Rosenman, MD</div>
+        <hr class="back-rule">
+        <div class="back-specialty">Mental Health &amp; Addiction Care</div>
+        <div class="back-location">Cambridge, MA &nbsp;·&nbsp; Telehealth in MA &amp; NY</div>
+        <div class="back-url">www.dayan-rosenman.net</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════
+       VERSION B — With Photo
+  ════════════════════════════════════════ -->
+
+  <div class="section-label">Version B — With photo</div>
+  <div class="card-pair">
+
+    <div class="card-wrap">
+      <div class="card-label">Front</div>
+      <div class="card front-photo">
+        <div class="fp-photo">
+          <img src="uploads/headshot3.jpg" alt="Dr. David Dayan-Rosenman">
+        </div>
+        <div class="fp-content">
+          <div class="fp-name">David Dayan-Rosenman, MD</div>
+          <div class="fp-cred">
+            Board Certified in Addiction Medicine &amp; Internal Medicine<br>
+            Instructor in Psychiatry, Harvard Medical School
+          </div>
+          <hr class="fp-rule">
+          <div class="fp-contact">
+            <div class="fp-row">
+              <span class="fp-lbl">Phone</span>
+              <span class="fp-val">(617) 528-0538</span>
+            </div>
+            <div class="fp-row">
+              <span class="fp-lbl">Email</span>
+              <span class="fp-val">david@dayan-rosenman.net</span>
+            </div>
+            <div class="fp-row">
+              <span class="fp-lbl">Web</span>
+              <span class="fp-val">www.dayan-rosenman.net</span>
+            </div>
+            <div class="fp-row">
+              <span class="fp-lbl">Office</span>
+              <span class="fp-val">1 Arnold Circle, Cambridge MA 02139</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card-label">Back</div>
+      <div class="card back-card">
+        <div class="back-eyebrow">Private Practice</div>
+        <div class="back-name">David Dayan-Rosenman, MD</div>
+        <hr class="back-rule">
+        <div class="back-specialty">Mental Health &amp; Addiction Care</div>
+        <div class="back-location">Cambridge, MA &nbsp;·&nbsp; Telehealth in MA &amp; NY</div>
+        <div class="back-url">www.dayan-rosenman.net</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
