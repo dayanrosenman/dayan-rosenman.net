@@ -48,14 +48,14 @@
 
     /* ── Print / PDF export ── */
     @media print {
-      @page { size: 3.5in 2in; margin: 0; }
+      @page { size: 84mm 55mm; margin: 0; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
       .instructions, .section-label, .print-btn { display: none !important; }
       .card-pair { display: block !important; gap: 0 !important; }
       .card-wrap { page-break-after: always; break-after: page; display: block !important; }
       .card-wrap .card-label { display: none !important; }
-      .card { width: 3.5in !important; height: 2in !important; box-shadow: none !important; }
+      .card { width: 84mm !important; height: 55mm !important; box-shadow: none !important; }
     }
 
     /* ── Section labels ── */
@@ -79,10 +79,10 @@
     }
 
     /* ── Card shell ── */
-    /* Display at ~1.8× — VistaPrint 3.5"×2" at 300 DPI = 1050×600px → shown at 525×300px */
+    /* Display at half print size — Moo 84×55mm at 300 DPI = 992×650px → shown at 496×325px */
     .card {
-      width: 525px;
-      height: 300px;
+      width: 496px;
+      height: 325px;
       overflow: hidden;
       box-shadow: 0 6px 28px rgba(0,0,0,0.18);
       position: relative;
@@ -253,18 +253,14 @@
 <body>
 
   <div class="instructions">
-    <h2>Print specifications</h2>
+    <h2>Moo Standard Business Card — Print specifications</h2>
     <table>
-      <tr>
-        <td>VistaPrint</td>
-        <td>3.5″ × 2″ trim &nbsp;·&nbsp; +0.125″ bleed each side &nbsp;·&nbsp; 300 DPI &nbsp;·&nbsp; PDF or JPG/PNG (CMYK)</td>
-      </tr>
-      <tr>
-        <td>Moo (Standard)</td>
-        <td>84 × 55mm trim &nbsp;·&nbsp; +2mm bleed each side &nbsp;·&nbsp; 300 DPI &nbsp;·&nbsp; PDF or JPG/PNG</td>
-      </tr>
+      <tr><td>Trim size</td><td>84 × 55mm</td></tr>
+      <tr><td>Bleed</td><td>+2mm each side (88 × 59mm)</td></tr>
+      <tr><td>Resolution</td><td>300 DPI minimum</td></tr>
+      <tr><td>Format</td><td>PDF (preferred) or JPG/PNG</td></tr>
     </table>
-    <p><strong>To export for printing:</strong> Click the button below → Chrome print dialog opens → set <em>Destination</em> to "Save as PDF", <em>Paper size</em> to Custom 3.5"×2", <em>Margins</em> None, enable <em>Background graphics</em> → Save. Each card (front/back, both versions) lands on its own page. Upload front and back pages separately to Moo or VistaPrint.</p>
+    <p><strong>To export:</strong> Click the button below → Chrome print dialog → set <em>Destination</em> to "Save as PDF", <em>Paper size</em> to Custom <strong>84×55mm</strong>, <em>Margins</em> to None, enable <em>Background graphics</em> → Save. Each card lands on its own page. Upload the front page and back page separately at <strong>moo.com</strong> when designing your card.</p>
   </div>
 
   <button class="print-btn" onclick="window.print()">Export PDF for printing</button>
