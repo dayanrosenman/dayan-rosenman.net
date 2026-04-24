@@ -395,10 +395,11 @@
     border-top: 1px solid var(--rule);
   }
   .conditions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
     margin-top: 20px;
-    font-size: 15px;
-    color: var(--ink-light);
-    white-space: nowrap;
+    max-width: 560px;
   }
   .condition-item {
     font-size: 15px;
@@ -875,11 +876,6 @@
     <h1 class="hero-title">Mental Health &amp; Addiction Care in Cambridge, MA</h1>
     <p class="hero-subtitle">Reaching out is often the hardest part. I'm here to make it easier.</p>
     <p class="hero-desc">I provide therapy and medication management for adults navigating substance use, depression, anxiety, and related conditions — in a safe, trauma-informed, judgment-free space.</p>
-    <div class="hero-badges">
-      <span class="badge">Addiction Medicine</span>
-      <span class="badge">Mental Health</span>
-      <span class="badge">HMS Faculty</span>
-    </div>
     <div>
       <a href="#contact" class="btn-primary">Request an Appointment</a>
       <a href="#services" class="btn-secondary">Learn More</a>
@@ -996,8 +992,8 @@
     </div>
     <div class="service-card">
       <div class="service-icon">
-        <!-- Anchor: stability, grounding -->
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+        <!-- Shield: safety, protection -->
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
       <div class="service-title">Addiction Care</div>
       <p class="service-body">Compassionate, evidence-based treatment for substance use disorders including alcohol, opioids, and stimulants. Harm reduction and medication-assisted treatment available, including buprenorphine (Suboxone, Sublocade, Brixadi).</p>
@@ -1029,7 +1025,7 @@
       <div class="step-num">01</div>
       <div class="step-content">
         <h4>Reach out</h4>
-        <p>Send me a message through the contact form. I'll respond within 1–2 business days to schedule a brief call to see whether my practice is right for you.</p>
+        <p>Send me a message through the contact form. I'll respond within 1–2 business days to schedule a brief call.</p>
       </div>
     </div>
     <div class="step">
@@ -1159,7 +1155,7 @@
     <div class="cta-left">
       <div class="section-label" style="color:rgba(255,255,255,0.6)">Contact</div>
       <h2 class="section-title" style="color:white; max-width:380px">Ready to take the first step?</h2>
-      <p class="section-body" style="color:rgba(255,255,255,0.7); max-width:340px; margin-bottom:28px">I'll respond within 1–2 business days to schedule a brief call to see whether my practice is right for you.</p>
+      <p class="section-body" style="color:rgba(255,255,255,0.7); max-width:340px; margin-bottom:28px">I'll respond within 1–2 business days.</p>
       <div class="cta-contact-list">
         <a href="tel:6175280538" class="cta-link">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
