@@ -94,19 +94,34 @@
     /* ── Footer ── */
     .footer {
       border-top: 1px solid var(--accent);
-      padding: 12px 1in;
+      padding: 11px 1in;
       font-family: 'DM Sans', Arial, sans-serif;
       font-size: 10px;
-      color: var(--ink-light);
+      color: var(--accent);
       background: var(--cream);
       display: flex;
       flex-wrap: wrap;
-      gap: 0;
+      gap: 18px;
       align-items: center;
     }
-    .footer span { white-space: nowrap; }
-    .footer a { color: var(--accent); text-decoration: none; }
-    .footer .sep { margin: 0 10px; color: var(--rule); }
+    .footer-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      color: var(--accent);
+    }
+    .footer-item svg {
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .footer-item a { color: var(--accent); text-decoration: none; }
 
     /* ── Print ── */
     @media print {
@@ -141,7 +156,7 @@
   <header class="header">
     <div class="header-name">David Dayan-Rosenman, MD</div>
     <div class="header-creds">Board Certified in Addiction Medicine &amp; Internal Medicine</div>
-    <div class="header-creds">Harvard Medical School Faculty</div>
+    <div class="header-creds">Instructor in Psychiatry, Harvard Medical School</div>
     <div class="header-specialty">Mental Health &amp; Addiction Care &nbsp;&middot;&nbsp; Cambridge, MA</div>
   </header>
   <hr class="header-rule">
@@ -154,15 +169,22 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <span><a href="tel:+16175280538">(617) 528-0538</a></span>
-    <span class="sep">&middot;</span>
-    <span style="color:#8a7a72;font-size:9px;text-transform:uppercase;letter-spacing:0.06em;">Phone/Text</span>
-    <span class="sep">&middot;</span>
-    <span><a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a></span>
-    <span class="sep">&middot;</span>
-    <span>1 Arnold Circle, Cambridge, MA 02139</span>
-    <span class="sep">&middot;</span>
-    <span><a href="https://www.dayan-rosenman.net">www.dayan-rosenman.net</a></span>
+    <span class="footer-item">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.17 12.8 19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+16175280538">(617) 528-0538</a>
+    </span>
+    <span class="footer-item">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:david@dayan-rosenman.net">david@dayan-rosenman.net</a>
+    </span>
+    <span class="footer-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>1 Arnold Circle, Cambridge, MA 02139</span>
+    </span>
+    <span class="footer-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="https://www.dayan-rosenman.net">www.dayan-rosenman.net</a>
+    </span>
   </footer>
 
 </div>
