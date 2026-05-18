@@ -394,21 +394,37 @@
     padding-top: 48px;
     border-top: 1px solid var(--rule);
   }
+  .conditions-intro {
+    max-width: 680px;
+    margin: 12px 0 32px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
   .conditions-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 24px;
-    max-width: 600px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 56px;
+    max-width: 800px;
   }
-  .condition-pill {
-    background: var(--cream-mid);
-    border: 1px solid var(--rule);
-    padding: 10px 18px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 400;
+  .conditions-group-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--accent-dark);
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+  }
+  .conditions-callout {
+    max-width: 680px;
+    margin: 32px 0 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: rgba(0,0,0,0.02);
+    font-size: 15px;
+    line-height: 1.6;
     color: var(--ink);
+    font-style: italic;
   }
 
   /* EXPECT */
@@ -691,7 +707,8 @@
     .btn-secondary { margin-left: 0; margin-top: 10px; display: block; text-align: center; }
     .about-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
-    .conditions-grid { grid-template-columns: 1fr 1fr; }
+    .conditions-list { gap: 0; }
+    .conditions-grid { grid-template-columns: 1fr; gap: 24px; }
     .expect-grid { grid-template-columns: 1fr; }
     .location-grid { grid-template-columns: 1fr; }
     .map-wrap { height: 220px; }
@@ -1016,15 +1033,34 @@
   </div>
 
   <div class="conditions-wrap">
-    <div class="section-label">Conditions Treated</div>
+    <div class="section-label">What I Treat</div>
+    <p class="conditions-intro">I work with adults navigating substance use disorders and mental health conditions — together or separately. Medication is used when helpful, and therapy and medication management often happen in the same visit.</p>
+
     <div class="conditions-grid">
-      <div class="condition-pill">ADHD</div>
-      <div class="condition-pill">Anxiety</div>
-      <div class="condition-pill">Depression</div>
-      <div class="condition-pill">Insomnia</div>
-      <div class="condition-pill">PTSD</div>
-      <div class="condition-pill">Substance Use</div>
+      <div class="conditions-group">
+        <h3 class="conditions-group-title">Substance Use Disorders</h3>
+        <ul class="conditions-list">
+          <li>Alcohol</li>
+          <li>Opioids</li>
+          <li>Stimulants</li>
+          <li>Benzodiazepines</li>
+          <li>Kratom (mitragynine, 7-OH)</li>
+          <li>Khat</li>
+        </ul>
+      </div>
+      <div class="conditions-group">
+        <h3 class="conditions-group-title">Mental Health</h3>
+        <ul class="conditions-list">
+          <li>Depression</li>
+          <li>Anxiety</li>
+          <li>PTSD</li>
+          <li>ADHD</li>
+          <li>Insomnia</li>
+        </ul>
+      </div>
     </div>
+
+    <p class="conditions-callout">I also offer slow, structured tapers for patients who want to come off benzodiazepines or antidepressants — with or without a use disorder.</p>
   </div>
 </section>
 
