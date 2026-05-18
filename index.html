@@ -496,6 +496,65 @@
     font-style: italic;
   }
 
+  /* FEES TABLE SECTION */
+  .fees-intro { max-width: 680px; }
+  .fees-intro p {
+    font-size: 16px;
+    color: var(--ink-light);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  .fees-h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 48px 0 20px;
+  }
+  .fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+  }
+  .fees-table thead th {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--accent);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .fees-table thead th:last-child { text-align: right; }
+  .fees-table tbody td {
+    padding: 20px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    font-size: 15px;
+  }
+  .fees-table tbody td:nth-child(2),
+  .fees-table tbody td:nth-child(3) {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-light);
+    font-size: 14px;
+  }
+  .fees-table tbody td:last-child {
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-dark);
+  }
+  .fee-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 5px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
   /* CTA SECTION */
   .cta-section {
     background: var(--accent);
@@ -730,6 +789,14 @@
     section { padding: 48px 20px; }
     .cta-inner { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
+    .fees-table thead { display: none; }
+    .fees-table, .fees-table tbody, .fees-table tr { display: block; }
+    .fees-table tr { border-bottom: 1px solid var(--rule); padding: 16px 0; }
+    .fees-table tbody td { display: block; border-bottom: none; padding: 2px 0; }
+    .fees-table tbody td:nth-child(2)::before { content: "CPT: "; color: var(--ink-light); }
+    .fees-table tbody td:nth-child(3)::before { content: "Time: "; color: var(--ink-light); }
+    .fees-table tbody td:last-child { text-align: left; margin-top: 6px; }
+    .fees-table tbody td:last-child::before { content: "Fee: "; color: var(--ink-light); font-weight: 400; }
   }
 </style>
 
@@ -890,6 +957,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#fees">Fees</a></li>
     <li><a href="#location">Location</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
@@ -900,6 +968,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#fees" onclick="closeMenu()">Fees</a>
   <a href="#location" onclick="closeMenu()">Location</a>
   <a href="#contact" onclick="closeMenu()">Get in Touch</a>
 </div>
@@ -1066,8 +1135,8 @@
 
 <hr class="rule">
 
-<!-- WHAT TO EXPECT + FEES -->
-<section id="fees">
+<!-- WHAT TO EXPECT -->
+<section id="expect">
   <div class="section-label">Getting Started</div>
   <h2 class="section-title">What to expect</h2>
   <div class="expect-steps">
@@ -1099,6 +1168,72 @@
         <p>Regular follow-up visits at a pace that works for you. I can collaborate with other providers to ensure coordinated care.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FEES -->
+<section id="fees">
+  <div class="section-label">Fees &amp; Insurance</div>
+  <h2 class="section-title">Fees &amp; Insurance</h2>
+  <div class="fees-intro">
+    <p>My practice is out-of-network with all insurance plans. For simplicity, payment is processed through a card kept securely on file at the time of each visit.</p>
+    <p>I provide detailed superbills periodically that you can submit to your insurance company for potential out-of-network reimbursement. Many PPO plans reimburse 50&ndash;70% of the visit fee after your deductible is met. I recommend verifying your out-of-network behavioral health and medical benefits with your insurance company before scheduling &mdash; the CPT (billing) codes below will help you confirm coverage and reimbursement rates.</p>
+    <p>In-person and telehealth visits are billed at the same rate.</p>
+  </div>
+  <h3 class="fees-h3">Visit Fees</h3>
+  <table class="fees-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>CPT Code</th>
+        <th>Time</th>
+        <th>Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>Initial comprehensive evaluation</strong>
+          <div class="fee-desc">A thorough first visit covering medical, psychiatric, and substance use history, current concerns, and development of a personalized treatment plan.</div>
+        </td>
+        <td>99205</td>
+        <td>60 min</td>
+        <td>$450</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Follow-up &mdash; integrated visit</strong>
+          <div class="fee-desc">Combined psychotherapy and medication management in a single extended visit. Most ongoing care happens in this format.</div>
+        </td>
+        <td>99215</td>
+        <td>45&ndash;60 min</td>
+        <td>$375</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Follow-up &mdash; medication management</strong>
+          <div class="fee-desc">Focused visit for prescription review, monitoring, and adjustment for established patients.</div>
+        </td>
+        <td>99213</td>
+        <td>20&ndash;30 min</td>
+        <td>$200</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Follow-up &mdash; medication management, extended</strong>
+          <div class="fee-desc">Longer medication management visit for more complex clinical situations or treatment changes.</div>
+        </td>
+        <td>99214</td>
+        <td>30&ndash;40 min</td>
+        <td>$275</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="fees-h3">Cancellation Policy</h3>
+  <div class="fees-intro">
+    <p>Appointments cancelled with less than 24 hours&rsquo; notice, and no-shows, are charged the full session fee. This policy exists because appointment slots cannot typically be filled on short notice, and the time has been reserved specifically for you.</p>
   </div>
 </section>
 
