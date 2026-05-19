@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Brand assets — kept locally, not deployed to website
+brand/
