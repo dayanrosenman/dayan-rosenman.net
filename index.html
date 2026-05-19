@@ -697,13 +697,7 @@
     background: var(--cream-mid);
     padding: clamp(48px, 8vw, 80px) clamp(24px, 6vw, 80px);
   }
-  .location-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: clamp(32px, 5vw, 64px);
-    align-items: center;
-    margin-top: 36px;
-  }
+  .location-info { max-width: 720px; margin-top: 36px; }
   .location-info h3 {
     font-family: 'Lora', serif;
     font-size: 20px;
@@ -725,20 +719,28 @@
   }
   .location-detail span { display: flex; align-items: center; gap: 8px; }
   .location-detail svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; flex-shrink: 0; }
-  .map-wrap {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    height: 280px;
+  .map-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
   }
-  .map-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-    filter: grayscale(1) sepia(0.3) brightness(1.05) contrast(0.95);
+  .map-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
   }
+  .map-actions a:hover { background: var(--accent-light); }
+  .map-actions svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
 
   /* FAQ */
   .faq-list { max-width: 720px; margin-top: 40px; }
@@ -816,8 +818,6 @@
     .conditions-list { gap: 0; }
     .conditions-grid { grid-template-columns: 1fr; gap: 24px; }
     .expect-grid { grid-template-columns: 1fr; }
-    .location-grid { grid-template-columns: 1fr; }
-    .map-wrap { height: 220px; }
     footer { flex-direction: column; gap: 8px; text-align: center; }
     section { padding: 48px 20px; }
     .cta-inner { grid-template-columns: 1fr; }
@@ -1302,46 +1302,45 @@
 <section class="location-section" id="location">
   <div class="section-label">Location</div>
   <h2 class="section-title">Office in Cambridge, MA — Telehealth in MA &amp; NY</h2>
-  <div class="location-grid">
-    <div class="location-info">
-      <h3>Cambridge, MA</h3>
-      <p>Located between Harvard Square and Kendall Square in Cambridge. Telehealth appointments are available via a HIPAA-compliant video platform — no special software required, just a smartphone or computer with a camera. Available for patients in Massachusetts and New York.</p>
-      <p style="font-size:14px; color:var(--ink-light); line-height:1.75; margin-bottom:20px"><strong style="color:var(--ink); font-weight:500">By T:</strong> Red Line to Central Square (0.4 mi, ~10 min walk), Harvard Square (0.6 mi), or Kendall/MIT (0.7 mi). Bus routes 1 and 47 stop on Mass Ave nearby.</p>
-      <div class="location-detail">
-        <span>
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          1 Arnold Circle, Suite 3, Cambridge, MA 02139
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="tel:6175280538" style="color: inherit; text-decoration: none;">(617) 528-0538</a>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:david@dayan-rosenman.net" style="color: inherit; text-decoration: none;">david@dayan-rosenman.net</a>
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M0 20h24M9 17v3M15 17v3"/></svg>
-          Telehealth available · Massachusetts and New York
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="7.5" y1="8.5" x2="16.5" y2="8.5"/><line x1="12" y1="8.5" x2="12" y2="16"/></svg>
-          Red Line: Central Sq (0.4 mi) · Harvard Sq (0.6 mi) · Kendall/MIT (0.7 mi)
-        </span>
-        <span>
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          <a href="https://www.psychologytoday.com/profile/728025" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 500;">View Psychology Today Profile →</a>
-        </span>
-      </div>
+  <div class="location-info">
+    <h3>Cambridge, MA</h3>
+    <p>Located between Harvard Square and Kendall Square in Cambridge. Telehealth appointments are available via a HIPAA-compliant video platform — no special software required, just a smartphone or computer with a camera. Available for patients in Massachusetts and New York.</p>
+    <p style="font-size:14px; color:var(--ink-light); line-height:1.75; margin-bottom:20px"><strong style="color:var(--ink); font-weight:500">By T:</strong> Red Line to Central Square (0.4 mi, ~10 min walk), Harvard Square (0.6 mi), or Kendall/MIT (0.7 mi). Bus routes 1 and 47 stop on Mass Ave nearby.</p>
+    <div class="location-detail">
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        1 Arnold Circle, Suite 3, Cambridge, MA 02139
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:6175280538" style="color: inherit; text-decoration: none;">(617) 528-0538</a>
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:david@dayan-rosenman.net" style="color: inherit; text-decoration: none;">david@dayan-rosenman.net</a>
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M0 20h24M9 17v3M15 17v3"/></svg>
+        Telehealth available · Massachusetts and New York
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="7.5" y1="8.5" x2="16.5" y2="8.5"/><line x1="12" y1="8.5" x2="12" y2="16"/></svg>
+        Red Line: Central Sq (0.4 mi) · Harvard Sq (0.6 mi) · Kendall/MIT (0.7 mi)
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <a href="https://www.psychologytoday.com/profile/728025" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 500;">View Psychology Today Profile →</a>
+      </span>
     </div>
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.0!2d-71.1284!3d42.3736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3775b5f77b6a7%3A0x0!2s1+Arnold+Cir%2C+Cambridge%2C+MA+02139!5e0!3m2!1sen!2sus!4v1"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Office location">
-      </iframe>
+    <div class="map-actions">
+      <a href="https://maps.apple.com/?address=1+Arnold+Circle,+Suite+3,+Cambridge,+MA+02139" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Open in Apple Maps
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=1+Arnold+Circle,+Suite+3,+Cambridge,+MA+02139" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Open in Google Maps
+      </a>
     </div>
   </div>
 </section>
